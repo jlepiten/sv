@@ -7,12 +7,16 @@ export default function SortingVisualizer() {
     const [array, setArray] = useState([]);
 
     useEffect(() => {
+        generateArray();
+    }, []);
+
+    const generateArray = () => {
         const temp = [];
         for (let i = 0; i < 320; i++) {
             temp.push(randomIntFromInterval(5,1000));
         }
         setArray(temp);
-    }, []);
+    };
 
     return (
         <div className="array-window">
@@ -24,6 +28,7 @@ export default function SortingVisualizer() {
                     >
                 </div>
             ))}
+            <button onClick={generateArray}>Generate new array</button>
         </div>
     );
 }

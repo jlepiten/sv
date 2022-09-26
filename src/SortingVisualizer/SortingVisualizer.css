@@ -1,12 +1,11 @@
-.array-container {
+.array-window {
     position: absolute;
-    left: 100px;
+    left: 10px;
 }
 
 .array-bar {
     width: 4px;
     background-color: darkgray;
     display: inline-block;
-
     margin: 0 1px;
 }
