@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './SortingVisualizer.css';
 
 
 export default function SortingVisualizer() {
@@ -7,17 +8,20 @@ export default function SortingVisualizer() {
 
     useEffect(() => {
         const temp = [];
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 400; i++) {
             temp.push(randomIntFromInterval(5,1000));
         }
         setArray(temp);
     }, []);
 
     return (
-        <div>
+        <div className="array-window">
             {array.map((value, index) => (
-                <div className="array-bar" key={index}>
-                    {value}
+                <div 
+                    className="array-bar" 
+                    key={index}
+                    style={{height: `${value}px`}}
+                    >
                 </div>
             ))}
         </div>
